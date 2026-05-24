@@ -1,0 +1,12 @@
+{
+  "name": "BlackScreen",
+  "short_name": "BlackScreen",
+  "description": "Watch movies free online with a premium streaming experience.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#E50914",
+  "icons": [
+    { "src": "/favicon.ico", "sizes": "any", "type": "image/x-icon" }
+  ]
+}
