@@ -1,8 +1,8 @@
-FROM oven/bun:1-alpine AS deps
+FROM node:22-alpine AS deps
 RUN apk add --no-cache python3 make g++
 WORKDIR /app
-COPY package.json bun.lock ./
-RUN bun install --frozen-lockfile
+COPY package.json ./
+RUN npm install
 
 FROM node:22-alpine AS builder
 WORKDIR /app
