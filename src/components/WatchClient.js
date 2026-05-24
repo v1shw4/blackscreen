@@ -4,11 +4,8 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import InterstitialAd from '@/components/ads/InterstitialAd';
 
 export default function WatchClient({ id }) {
-  const [adDismissed, setAdDismissed] = useState(false);
-
   return (
     <>
       <Header />
@@ -59,12 +56,7 @@ export default function WatchClient({ id }) {
             borderRadius: '16px',
             boxShadow: '0 10px 40px rgba(0,0,0,0.8)'
           }}>
-            {/* Interstitial ad shown before the movie loads */}
-            {!adDismissed && (
-              <InterstitialAd onClose={() => setAdDismissed(true)} />
-            )}
-
-            {/* Movie iframe — always mounted so it preloads behind the ad */}
+            {/* Movie iframe */}
             <iframe
               src={`https://moviesapi.to/movie/${id}`}
               style={{
@@ -74,7 +66,7 @@ export default function WatchClient({ id }) {
                 width: '100%',
                 height: '100%',
                 border: 'none',
-                visibility: adDismissed ? 'visible' : 'hidden',
+                visibility: 'visible',
               }}
               allowFullScreen
             />

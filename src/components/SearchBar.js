@@ -2,19 +2,13 @@
 
 import { useState } from 'react';
 import { Search } from 'lucide-react';
-import InterstitialAd from './ads/InterstitialAd';
 
 export default function SearchBar({ onSearch }) {
   const [query, setQuery] = useState('');
-  const [showAd, setShowAd] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query.trim().length >= 3) {
-      // 30% chance to show a full screen ad on search
-      if (Math.random() < 0.3) {
-        setShowAd(true);
-      }
       onSearch(query.trim());
     }
   };
@@ -97,10 +91,6 @@ export default function SearchBar({ onSearch }) {
           Search
         </button>
       </div>
-      
-      {showAd && (
-        <InterstitialAd onClose={() => setShowAd(false)} />
-      )}
     </form>
   );
 }

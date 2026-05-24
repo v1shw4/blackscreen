@@ -6,7 +6,6 @@ import MovieCard from '@/components/MovieCard';
 import SearchBar from '@/components/SearchBar';
 import SplashScreen from '@/components/SplashScreen';
 import BannerSlider from '@/components/BannerSlider';
-import AdBanner from '@/components/ads/AdBanner';
 
 export default function HomeClient() {
   const [movies, setMovies] = useState([]);
@@ -116,8 +115,7 @@ export default function HomeClient() {
           <SearchBar onSearch={handleSearch} />
         </div>
 
-        {/* Top Ad Banner */}
-        <AdBanner />
+
 
         {!loading && !isSearchActive && movies.length > 0 && !error && (
           <BannerSlider movies={movies} />
@@ -174,9 +172,7 @@ export default function HomeClient() {
           </div>
         )}
 
-        {!loading && movies.length > 0 && (
-          <AdBanner style={{ marginTop: '40px' }} />
-        )}
+
       </div>
     </>
   );
