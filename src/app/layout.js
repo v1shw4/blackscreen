@@ -1,5 +1,6 @@
 import "./globals.css";
 import BottomNav from "@/components/BottomNav";
+import Footer from "@/components/Footer";
 import Script from "next/script";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://blackscreen.watch';
@@ -77,6 +78,7 @@ export default function RootLayout({ children }) {
       <body>
         <main style={{ paddingBottom: '70px', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
           {children}
+          <Footer />
         </main>
         <BottomNav />
       </body>

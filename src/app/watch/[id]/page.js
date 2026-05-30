@@ -45,5 +45,21 @@ export async function generateMetadata({ params }) {
 
 export default async function WatchPage({ params }) {
   const { id } = await params;
-  return <WatchClient id={id} />;
+  
+  let movieData = null;
+  try {
+    const apiKey = process.env.TMDB_API_KEY;
+    if (apiKey) {
+      const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=credits`, {
+        next: { revalidate: 3600 }
+      });
+      if (res.ok) {
+        movieData = await res.json();
+      }
+    }
+  } catch (error) {
+    console.error("Failed to fetch TMDB data for watch page:", error);
+  }
+
+  return <WatchClient id={id} movieData={movieData} />;
 }
