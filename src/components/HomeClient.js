@@ -6,6 +6,8 @@ import MovieCard from '@/components/MovieCard';
 import SearchBar from '@/components/SearchBar';
 import SplashScreen from '@/components/SplashScreen';
 import BannerSlider from '@/components/BannerSlider';
+import AdsterraBanner468x60 from '@/components/AdsterraBanner468x60';
+import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 
 export default function HomeClient() {
   const [movies, setMovies] = useState([]);
@@ -111,6 +113,9 @@ export default function HomeClient() {
             }
           }
         `}} />
+        
+        <AdsterraBanner468x60 />
+
         <div className="search-container" style={{ marginBottom: '40px', marginTop: '20px' }}>
           <SearchBar onSearch={handleSearch} />
         </div>
@@ -118,7 +123,10 @@ export default function HomeClient() {
 
 
         {!loading && !isSearchActive && movies.length > 0 && !error && (
-          <BannerSlider movies={movies} />
+          <>
+            <BannerSlider movies={movies} />
+            <AdsterraNativeBanner />
+          </>
         )}
 
         {error && (

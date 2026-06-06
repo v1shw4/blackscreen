@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Link from 'next/link';
 import { ArrowLeft, Star, Clock, Calendar } from 'lucide-react';
+import AdsterraBanner468x60 from '@/components/AdsterraBanner468x60';
+import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 
 export default function WatchClient({ id, movieData }) {
   return (
@@ -48,6 +50,8 @@ export default function WatchClient({ id, movieData }) {
           padding: '0 20px',
           paddingBottom: '20px',
         }}>
+          <AdsterraBanner468x60 />
+          
           <div className="glass-panel player-wrapper" style={{
             width: '100%',
             height: 'calc(100vh - 200px)',
@@ -71,6 +75,8 @@ export default function WatchClient({ id, movieData }) {
               allowFullScreen
             />
           </div>
+
+          <AdsterraNativeBanner />
 
           {movieData && (
             <div className="glass-panel animate-fade-in" style={{

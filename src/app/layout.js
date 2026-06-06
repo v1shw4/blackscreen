@@ -74,6 +74,8 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        {/* Adsterra Popunder Ad */}
+        <Script src="https://pl29655574.effectivecpmnetwork.com/59/d3/a7/59d3a798a457228722a10f1dfff76a7d.js" strategy="afterInteractive" />
       </head>
       <body>
         <main style={{ paddingBottom: '70px', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -81,6 +83,8 @@ export default function RootLayout({ children }) {
           <Footer />
         </main>
         <BottomNav />
+        {/* Adsterra Social Bar Ad */}
+        <Script src="https://pl29655577.effectivecpmnetwork.com/a1/76/ab/a176abdf7e0bb12b216dde24a47c1b66.js" strategy="afterInteractive" />
       </body>
     </html>
   );
